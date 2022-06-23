@@ -1,1 +1,13 @@
 @import '~antd/dist/antd.css';
+
+@font-face {
+  font-family: 'KyoboHand';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: KyoboHand, -apple-system, 'Roboto', 'Ubuntu', sans-serif;
+}
