@@ -10,7 +10,7 @@ export class Goal {
 
   constructor(
     content: string = "",
-    backgroundColor?: string,
+    backgroundColor: string = "#EEEEEE",
     placeholder?: string
   ) {
     this.content = content;

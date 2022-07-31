@@ -2,7 +2,7 @@ import { Goal } from ".";
 
 describe("Goal", () => {
   it("generates correctly", () => {
-    const goal = new Goal("Hello Mobx", "", "Placeholder");
+    const goal = new Goal("Hello Mobx", undefined, "Placeholder");
 
     expect(goal).toBeTruthy();
     expect(typeof goal).toBe("object");
@@ -15,6 +15,8 @@ describe("Goal", () => {
 
     expect(goal.placeholder).toBe("Placeholder");
     expect(typeof goal.setPlaceholder).toBe("function");
+
+    expect(goal.backgroundColor).toBe("#EEEEEE");
 
     goal.setPlaceholder("Change Placeholder");
     expect(goal.placeholder).toBe("Change Placeholder");

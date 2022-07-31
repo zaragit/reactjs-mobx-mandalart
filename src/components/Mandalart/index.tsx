@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef, Ref } from "react";
 import { observer } from "mobx-react-lite";
 import styled, { css } from "styled-components";
 
@@ -28,12 +28,15 @@ export interface MandalartProps {
   readonly margin?: number;
 }
 
-function Mandalart({ store, size = 900, margin = 16 }: MandalartProps) {
+function Mandalart(
+  { store, size = 900, margin = 16 }: MandalartProps,
+  ref?: Ref<HTMLDivElement>
+) {
   const itemSize = (size - margin * 2) / 3;
   const halfMargin = margin / 2;
 
   return (
-    <Container size={size} margin={margin}>
+    <Container ref={ref} size={size} margin={margin}>
       <div>
         {store.plans.slice(0, 4).map((plan, i) => (
           <PlanBlock key={i} plan={plan} size={itemSize} margin={halfMargin} />
@@ -47,4 +50,4 @@ function Mandalart({ store, size = 900, margin = 16 }: MandalartProps) {
   );
 }
 
-export default observer(Mandalart);
+export default observer(forwardRef(Mandalart));
